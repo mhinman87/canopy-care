@@ -1,0 +1,7 @@
+{
+  "name": "canopy-care",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
