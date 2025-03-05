@@ -1,20 +1,47 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title>Canopy Care 🌳</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="home-page">
+  <div class="hero">
+    <h1>Professional Tree Trimming & Removal</h1>
+    <p>Get an instant estimate using AI. Take a picture and let us handle the rest.</p>
+    <ion-button expand="full" routerLink="/loader">Get Started</ion-button>
+  </div>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div class="features">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>📷 AI-Powered Estimates</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        Upload a tree photo and get an instant price estimate for trimming or removal.
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>🌳 Expert Services</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        We work with the best local arborists to ensure your trees get top-quality care.
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>🚀 Fast & Easy Booking</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        Schedule a service in just a few taps. No hassle, no stress.
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <div class="footer">
+    <p>© 2025 Canopy Care. All Rights Reserved.</p>
   </div>
 </ion-content>
+
