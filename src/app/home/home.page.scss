@@ -1,48 +1,314 @@
-::ng-deep .home-page {
+/* General Page Styling */
+html, body {
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  background: #f5f5f5;
+  color: #333;
+  height: 100%;
+  overflow-y: scroll !important;
+  
+}
+
+/* Header */
+.header {
+  position: sticky; /* ✅ Locks the header in place */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* ✅ Ensures it's above all other elements */
+  background: white;
+  padding: 15px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header.shrink {
+  padding: 10px 5%; /* ✅ Smaller padding when scrolled */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* ✅ Subtle shadow */
+}
+
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px; 
+  margin: 0 auto;  
+}
+
+.nav {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  gap: 30px;
+}
+
+.nav a {
+  font-size: 1.4rem;
+  margin-left: 20px;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.nav a:hover {
+  color: #1e6f50;
+}
+
+
+.logo img{
+  height: 100px;
+  max-width: 180px;
+  padding-left: 30px;
+  cursor: pointer;
+}
+
+.cta-button {
+  background: #1e6f50;
+  color: white;
+  font-size: 1.4;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Hero Section */
+.hero h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.cta-button {
+  background: #1e6f50;
+  color: white;
+  font-size: 1.2rem;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.cta-button:hover {
+  background: #14523b;
+}
+
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 10%;  /* Reduced top padding */
+  background: url('/assets/images/tech-background.png') center/cover no-repeat;
+  color: white;
+  text-align: left;
+  min-height: 30vh; /* Adjusted height */
+  max-height: 70vh;
+  position: relative; /* Allows absolute positioning inside */
+  //overflow: hidden; /* Prevents unwanted scrolling */
+}
+
+.hero-content {
+  flex: 1;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;  /* Push text higher */
+  align-items: flex-start;
+  margin-top: -200px;
+  z-index: 2; /* Keeps text above image */
+}
+
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  overflow: visible;
+}
+
+.hero-image img {
+  width: 75%; /* Controls the overall image size */
+  max-width: 500px; /* Prevents it from getting too big */
+  height: 500px;
+  object-fit: cover;
+  position: relative; /* Ensures it stays inside the div */
+  border-radius: 20px; /* ✅ Proper rounded corners */
+  object-fit: cover; /* Ensures no stretching */
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2); /* Optional: Adds a soft shadow */
+  bottom: -70px; /* ✅ Moves image below the hero section */
+}
+
+
+
+/* CTA Section */
+.cta {
+  background: #1e6f50;
+  color: white;
   text-align: center;
-  background: linear-gradient(to bottom, #0b3d2f, #1e6f50) !important;
-  color: white !important;
-  height: 100% !important;
+  padding: 60px 20px;
+}
+
+.cta h2 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.cta p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+/* Footer */
+.footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
 }
 
 .home-page {
-  text-align: center;
-  background: linear-gradient(to bottom, #0b3d2f, #1e6f50);
-  color: white;
-  height: 100%;
-
-  .hero {
-    padding: 40px 20px;
-    h1 {
-      font-size: 2rem;
-      font-weight: bold;
-    }
-    p {
-      font-size: 1.2rem;
-      margin-bottom: 20px;
-    }
-  }
-
-  .features {
-    ion-card {
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 15px;
-      margin: 10px;
-      ion-card-title {
-        font-size: 1.4rem;
-        font-weight: bold;
-      }
-    }
-  }
-
-  .footer {
-    padding: 20px;
-    font-size: 0.9rem;
-    opacity: 0.8;
-  }
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-ion-content {
-  --background: linear-gradient(to bottom, #0b3d2f, #1e6f50) !important;  
-  color: white !important;
+.home-page section {
+  flex-grow: 1; 
+}
+
+body, app-home {
+  overflow-y: scroll !important;
+  height: auto !important;
+  min-height: 100vh;
+  display: block !important;
+}
+
+ion-app, app-root {
+  overflow-y: auto !important;
+  height: 100%;
+}
+
+/* Modern Banner */
+.ai-section {
+  background: white;
+  padding: 80px 5%;
+  text-align: center;
+}
+
+.ai-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.ai-section h2 {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #1e6f50; /* Match brand color */
+  margin-bottom: 15px;
+}
+
+.ai-section p {
+  font-size: 1.2rem;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* Features Section */
+.features {
+  background: #f5f5f5; /* Light gray background */
+  padding: 80px 5%;
+  text-align: center;
+}
+
+.features h2 {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #1e6f50;
+  margin-bottom: 40px;
+}
+
+.features-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.feature-card {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2); /* Same soft shadow effect */
+  width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px); /* Subtle hover effect */
+}
+
+.feature-card img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 15px;
+}
+
+.feature-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.feature-card p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+
+
+/* Responsive Design*/
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    padding: 40px 20px;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-image {
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .hero-image img {
+    position: static;
+    width: 100%;
+    transform: none;
+  }
 }

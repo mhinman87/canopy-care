@@ -1,47 +1,81 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Canopy Care 🌳</ion-title>
-  </ion-toolbar>
-</ion-header>
+<div class="header">
+  <!-- <div class="container"> -->
+    <div class="logo">
+      <img src="assets/images/canopy-care-logo.png" alt="Canopy Care Logo">
+    </div>
+    
+    <nav class="nav">
+      <a href="#features">Features</a>
+      <a href="#faqs">FAQs</a>
+      <a href="#about">About Us</a>
+      <a href="#contact">Contact Us</a>
+    </nav>
+  <!-- </div> -->
 
-<ion-content class="home-page">
-  <div class="hero">
-    <h1>Professional Tree Trimming & Removal</h1>
-    <p>Get an instant estimate using AI. Take a picture and let us handle the rest.</p>
-    <ion-button expand="full" routerLink="/loader">Get Started</ion-button>
+  <div class="cta-1">
+    <button class="cta-button">Get an Estimate</button>
   </div>
+</div>
 
-  <div class="features">
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>📷 AI-Powered Estimates</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        Upload a tree photo and get an instant price estimate for trimming or removal.
-      </ion-card-content>
-    </ion-card>
 
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>🌳 Expert Services</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        We work with the best local arborists to ensure your trees get top-quality care.
-      </ion-card-content>
-    </ion-card>
+<div class="main" #main>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Tree Trimming & Removal, Simplified</h1>
+      <p>Get an instant estimate with AI-powered analysis.</p>
+      <button class="cta-button" routerLink="/loader">Get Started</button>
+    </div>
+    <div class="hero-image">
+      <img src="assets/images/tree-trimmers.jpg" alt="Tree Trimmers">
+    </div>
+  </section>
 
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>🚀 Fast & Easy Booking</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        Schedule a service in just a few taps. No hassle, no stress.
-      </ion-card-content>
-    </ion-card>
-  </div>
+  <!---Modern Banner Section-->
+  <section class="ai-section">
+    <div class="ai-content">
+      <h2>Smarter Tree Care with AI-Powered Estimates</h2>
+      <p>Snap a photo of your tree, and our advanced AI technology will instantly provide a precise estimate for trimming or removal.</p>
+    </div>
 
-  <div class="footer">
-    <p>© 2025 Canopy Care. All Rights Reserved.</p>
-  </div>
-</ion-content>
+  <!-- Features Section -->
+    <div class="features-container">
+      <div class="feature-card">
+        <img src="assets/icons/ai-icon.svg" alt="AI Analysis">
+        <h3>AI-Powered Estimates</h3>
+        <p>Take a photo of your tree and receive an instant, accurate estimate using advanced AI technology.</p>
+      </div>
+      <div class="feature-card">
+        <img src="assets/icons/expert-icon.svg" alt="Expert Arborists">
+        <h3>Trusted Professionals</h3>
+        <p>Our certified arborists ensure your trees are trimmed and removed with expert care and precision.</p>
+      </div>
+      <div class="feature-card">
+        <img src="assets/icons/booking-icon.svg" alt="Easy Scheduling">
+        <h3>Hassle-Free Booking</h3>
+        <p>Schedule your service online in just a few clicks—no phone calls, no waiting, just convenience.</p>
+      </div>
+    </div>
+  </section>
+  
+  
+
+
+
+
+
+  <!-- CTA Section -->
+  <section class="cta">
+    <h2>Get Your Free Estimate Today!</h2>
+    <p>Upload a tree photo and receive a quote in seconds.</p>
+    <button class="cta-button" routerLink="/loader">Get an Estimate</button>
+  </section>
+</div>
+
+<footer class="footer">
+  <p>© 2025 Canopy Care. All Rights Reserved.</p>
+</footer>
+
+
+
 

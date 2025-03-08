@@ -40,3 +40,23 @@ body {
     background: linear-gradient(to bottom, #0b3d2f, #1e6f50) !important;
     color: white !important;
   }
+
+  html, body, ion-app, app-root, app-home {
+    font-family: "Arial Rounded MT Bold", Arial, sans-serif !important;
+    overflow-y: auto !important;
+    height: auto !important;
+    min-height: 100vh !important;
+    display: block !important;
+    position: relative !important;
+    scrollbar-width: none; 
+    -ms-overflow-style: none; 
+  }
+
+
+html::-webkit-scrollbar, body::-webkit-scrollbar {
+  display: none;
+}
+
+
+
+
