@@ -1,5 +1,4 @@
-<div class="header">
-  <!-- <div class="container"> -->
+<div class="header" [style.height]="headerHeight">
     <div class="logo">
       <img src="assets/images/canopy-care-logo.png" alt="Canopy Care Logo">
     </div>
@@ -10,24 +9,45 @@
       <a href="#about">About Us</a>
       <a href="#contact">Contact Us</a>
     </nav>
-  <!-- </div> -->
 
   <div class="cta-1">
     <button class="cta-button">Get an Estimate</button>
   </div>
+
+  <div class="hamburger-menu" (click)="toggleMenu()">
+    ☰
+  </div>
+
+  <div class="dropdown-menu" *ngIf="menuOpen" >
+    <a href="#">Features</a>
+    <a href="#">Pricing</a>
+    <a href="#">FAQs</a>
+    <a href="#">Contact</a>
+  </div>
 </div>
 
 
-<div class="main" #main>
+<div class="main" #main (scroll)="test()">
+
+  <div class="parallax-container">
+    <div class="parallax-layer layer1"></div>
+    <div class="parallax-layer layer2"></div>
+    <div class="parallax-layer layer3"></div>
+    <div class="parallax-layer layer4"></div>
+    <div class="parallax-layer layer5"></div>
+    <div class="parallax-layer layer6"></div>
+  </div>
+  
+
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
-      <h1>Tree Trimming & Removal, Simplified</h1>
+      <h1>Tree Trimming and Removal, Simplified</h1>
       <p>Get an instant estimate with AI-powered analysis.</p>
       <button class="cta-button" routerLink="/loader">Get Started</button>
     </div>
     <div class="hero-image">
-      <img src="assets/images/tree-trimmers.jpg" alt="Tree Trimmers">
+      <img src="assets/images/tree-trimmers.png" alt="Tree Trimmers">
     </div>
   </section>
 
@@ -41,17 +61,17 @@
   <!-- Features Section -->
     <div class="features-container">
       <div class="feature-card">
-        <img src="assets/icons/ai-icon.svg" alt="AI Analysis">
+        <img src="assets/images/ai-icon.png" alt="AI Analysis">
         <h3>AI-Powered Estimates</h3>
         <p>Take a photo of your tree and receive an instant, accurate estimate using advanced AI technology.</p>
       </div>
       <div class="feature-card">
-        <img src="assets/icons/expert-icon.svg" alt="Expert Arborists">
+        <img src="assets/images/expert-icon.png" alt="Expert Arborists">
         <h3>Trusted Professionals</h3>
         <p>Our certified arborists ensure your trees are trimmed and removed with expert care and precision.</p>
       </div>
       <div class="feature-card">
-        <img src="assets/icons/booking-icon.svg" alt="Easy Scheduling">
+        <img src="assets/images/booking-icon.png" alt="Easy Scheduling">
         <h3>Hassle-Free Booking</h3>
         <p>Schedule your service online in just a few clicks—no phone calls, no waiting, just convenience.</p>
       </div>
@@ -70,11 +90,13 @@
     <p>Upload a tree photo and receive a quote in seconds.</p>
     <button class="cta-button" routerLink="/loader">Get an Estimate</button>
   </section>
+
+  <footer class="footer">
+    <p>© 2025 Canopy Care. All Rights Reserved.</p>
+  </footer>
 </div>
 
-<footer class="footer">
-  <p>© 2025 Canopy Care. All Rights Reserved.</p>
-</footer>
+
 
 
 

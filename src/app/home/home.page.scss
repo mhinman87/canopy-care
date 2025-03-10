@@ -5,8 +5,15 @@ html, body {
   background: #f5f5f5;
   color: #333;
   height: 100%;
-  overflow-y: scroll !important;
-  
+}
+
+html, body {
+  scrollbar-width: none; /* ✅ Hides scrollbar in Firefox */
+  -ms-overflow-style: none; /* ✅ Hides scrollbar in Edge */
+}
+
+.main::-webkit-scrollbar {
+  display: none; /* ✅ Hides scrollbar in Chrome & Safari */
 }
 
 /* Header */
@@ -25,8 +32,13 @@ html, body {
 }
 
 .header.shrink {
-  padding: 10px 5%; /* ✅ Smaller padding when scrolled */
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* ✅ Subtle shadow */
+  padding: 10px 5%;
+  height: 100px; /* ✅ Adjust height when shrinking */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.hamburger-menu {
+  display: none;
 }
 
 
@@ -67,15 +79,34 @@ html, body {
   cursor: pointer;
 }
 
-.cta-button {
-  background: #1e6f50;
-  color: white;
-  font-size: 1.4;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+/*Parallax Section*/
+
+.parallax-container {
+  position: relative;
+  height: 100vh; /* ✅ Adjust based on how big you want the effect */
+  overflow: hidden; /* ✅ Prevents unwanted scrolling */
+  z-index: 1;
 }
+
+.parallax-layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* ✅ Set up each layer with different speeds */
+.layer1 { background-image: url('../../assets/images/parallax/parallax-L0.png'); transform: translateY(0); }
+.layer2 { background-image: url('../../assets/images/parallax/parallax-L1.png'); transform: translateY(0); }
+.layer3 { background-image: url('../../assets/images/parallax/parallax-L2.png'); transform: translateY(0); }
+.layer4 { background-image: url('../../assets/images/parallax/parallax-L3.png'); transform: translateY(0); }
+.layer5 { background-image: url('../../assets/images/parallax/parallax-L4.png'); transform: translateY(0); }
+.layer6 { background-image: url('../../assets/images/parallax/parallax-L5.png'); transform: translateY(0); }
+
+
+
 
 /* Hero Section */
 .hero h1 {
@@ -90,18 +121,18 @@ html, body {
 }
 
 .cta-button {
-  background: #1e6f50;
+  background: #FA0071;
   color: white;
   font-size: 1.2rem;
   padding: 15px 30px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: 0.3s;
+  //transition: 0.3s;
 }
 
 .cta-button:hover {
-  background: #14523b;
+  background: #17E3B4;
 }
 
 
@@ -110,7 +141,7 @@ html, body {
   justify-content: space-between;
   align-items: center;
   padding: 60px 10%;  /* Reduced top padding */
-  background: url('/assets/images/tech-background.png') center/cover no-repeat;
+  background: #002307;
   color: white;
   text-align: left;
   min-height: 30vh; /* Adjusted height */
@@ -119,14 +150,20 @@ html, body {
   //overflow: hidden; /* Prevents unwanted scrolling */
 }
 
+.hero h1 {
+  font-size: 4rem; /* ✅ Adjust this value as needed */
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+
 .hero-content {
   flex: 1;
   max-width: 600px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;  /* Push text higher */
+  //justify-content: flex-start;  /* Push text higher */
   align-items: flex-start;
-  margin-top: -200px;
   z-index: 2; /* Keeps text above image */
 }
 
@@ -143,7 +180,7 @@ html, body {
 .hero-image img {
   width: 75%; /* Controls the overall image size */
   max-width: 500px; /* Prevents it from getting too big */
-  height: 500px;
+  height: 475px;
   object-fit: cover;
   position: relative; /* Ensures it stays inside the div */
   border-radius: 20px; /* ✅ Proper rounded corners */
@@ -156,7 +193,7 @@ html, body {
 
 /* CTA Section */
 .cta {
-  background: #1e6f50;
+  background: #157873;
   color: white;
   text-align: center;
   padding: 60px 20px;
@@ -251,7 +288,8 @@ ion-app, app-root {
 
 .feature-card {
   background: white;
-  padding: 30px;
+  padding: 0;
+  margin: 0;
   border-radius: 15px;
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2); /* Same soft shadow effect */
   width: 300px;
@@ -259,15 +297,20 @@ ion-app, app-root {
   transition: transform 0.3s ease-in-out;
 }
 
+
 .feature-card:hover {
   transform: translateY(-5px); /* Subtle hover effect */
 }
 
 .feature-card img {
-  width: 60px;
-  height: 60px;
-  margin-bottom: 15px;
+  width: 100%; /* ✅ Makes image take full width of the card */
+  height: auto; /* ✅ Keeps aspect ratio */
+  display: block; /* ✅ Removes bottom space caused by inline images */
+  padding: 0; /* ✅ Removes any padding */
+  margin: 0; /* ✅ Ensures no extra spacing */
+  border-radius: 10px 10px 0px 0px; /* ✅ Optional: Keeps smooth edges */
 }
+
 
 .feature-card h3 {
   font-size: 1.5rem;
@@ -281,34 +324,113 @@ ion-app, app-root {
   line-height: 1.5;
 }
 
-
+.main {
+  flex: 1;
+  overflow-y: auto !important; /* ✅ Allows scrolling inside .main */
+  height: 100vh; /* ✅ Ensures content takes full height */
+  scrollbar-width: none; 
+}
 
 /* Responsive Design*/
-@media (max-width: 768px) {
+@media screen and (max-width: 1125px) {
   .hero {
-    flex-direction: column;
-    padding: 40px 20px;
+    flex-direction: column; /* ✅ Stack content */
+    text-align: center; /* ✅ Ensure text stays readable */
+    padding: 60px 5%; /* ✅ Adds breathing room */
+    height: auto; /* ✅ Prevents weird stretching */
+    display: flex;
+    align-items: center; /* ✅ Centers content horizontally */
+    justify-content: center; /* ✅ Centers content vertically */
+    padding: 60px 5%; /* ✅ Keeps spacing balanced */
+    height: 50vh; /* ✅ Shrinks height (was 100vh) */
   }
 
   .hero-content {
-    max-width: 100%;
-    text-align: center;
-  }
-
-  .cta-buttons {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .hero-image {
-    position: relative;
     width: 100%;
-    margin-top: 20px;
+    max-width: 600px; /* ✅ Prevents text from being too wide */
+    text-align: center;
+    align-items: center; /* ✅ Centers content horizontally */
+    justify-content: center; /* ✅ Centers content vertically */
+  }
+
+  .hero h1 {
+    font-size: 3rem; /* ✅ Slightly reduce size */
   }
 
   .hero-image img {
-    position: static;
-    width: 100%;
-    transform: none;
+   display: none;
   }
+
+  .features {
+    display: flex;
+    flex-wrap: wrap; /* ✅ Ensures proper wrapping if needed */
+    justify-content: center; /* ✅ Keeps cards centered */
+    gap: 20px; /* ✅ Adds space between cards */
+  }
+
+  .feature-card {
+    width: 30%; /* ✅ Shrinks cards down from full width */
+    max-width: 500px; /* ✅ Prevents them from getting too large */
+  }
+
+}
+
+@media screen and (max-width: 1075px){
+  .nav {
+    display: none; /* ✅ Hides standard menu */
+  }
+
+  .hamburger-menu {
+    display: block; /* ✅ Shows hamburger icon */
+    color: #1e6f50;
+    cursor: pointer;
+    right: 30px;
+    font-size: 2rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); /* ✅ Centers it vertically */
+  }
+
+  .logo img{
+    height: 80px;
+    max-width: 180px;
+    padding-left: 30px;
+    cursor: pointer;
+  }
+
+  .header .cta-button {
+    position: absolute;
+    right: 65px; /* ✅ Moves it just to the left of the hamburger */
+    top: 52%;
+    transform: translateY(-50%); /* ✅ Centers vertically */
+    background: #ff4081; /* ✅ Matches theme */
+    color: white;
+    padding: 10px 18px;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-decoration: none;
+  }
+
+  .header {
+    height: 100px !important;
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: white;
+    padding: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dropdown-menu a {
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+  }
+
 }
