@@ -23,9 +23,9 @@ export class HomePage {
   menuOpen = false; // Menu is closed at launch
 
   test() {
+
     const scrollTop = document.querySelector('.main')?.scrollTop || 0; // ✅ Get scroll position
-    console.log("Scroll Position:", scrollTop); // ✅ Debugging log
-  
+   
     // ✅ HEADER SHRINKING LOGIC
     const minHeight = 100; // ✅ Smallest header height
     const maxHeight = 150; // ✅ Largest header height
@@ -40,13 +40,16 @@ export class HomePage {
     this.headerHeight = newHeight + 'px'; // ✅ Bind this to CSS dynamically
   
     // ✅ PARALLAX EFFECT
-    const speeds = [0.8, 0.6, 0.4, 0.3, 0.2, 0.0]; // ✅ Different speeds for each layer
+    const speeds = [1.0, 0.6, 0.4, 0.3, 0.2, 0.0]; // ✅ Different speeds for each layer
     const layers = document.querySelectorAll('.parallax-layer');
   
     layers.forEach((layer, index) => {
       const speed = speeds[index];
       (layer as HTMLElement).style.transform = `translateY(${scrollTop * speed}px)`;
     });
+
+    
+
   }
   
 

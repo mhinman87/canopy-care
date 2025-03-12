@@ -16,6 +16,11 @@ html, body {
   display: none; /* ✅ Hides scrollbar in Chrome & Safari */
 }
 
+.main {
+  overflow-y: scroll !important; /* ✅ Ensure smooth scrolling */
+  -webkit-overflow-scrolling: touch; /* ✅ Smooth touch scrolling */
+}
+
 /* Header */
 .header {
   position: sticky; /* ✅ Locks the header in place */
@@ -95,6 +100,7 @@ html, body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  will-change: transform;
 }
 
 /* ✅ Set up each layer with different speeds */
@@ -433,4 +439,39 @@ ion-app, app-root {
     color: black;
   }
 
+}
+
+@media screen and (max-width: 1075px){
+
+  .features-container{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1068px) {
+  .hero {
+    height: auto !important; /* ✅ Allows it to expand */
+    min-height: 50vh !important; /* ✅ Prevents compression */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 5%;
+  }
+
+  .hero-content {
+    width: 90%;
+    text-align: center;
+  }
+}
+
+
+@media screen and (max-width: 550px){
+  .header .cta-button {
+    display: none;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
 }
